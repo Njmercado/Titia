@@ -10,7 +10,7 @@ export default function ChatSection() {
       <div className="flex flex-col lg:flex-row gap-6 w-full max-w-7xl mx-auto">
 
         {/* LEFT PANEL: Fixed Informational Track */}
-        <div className="flex-1 flex flex-col gap-4">
+        <div className="w-full lg:flex-1 flex flex-col gap-4">
           <div className="border-[3px] border-black bg-brutal-cream p-4 font-bold text-lg mb-2 shadow-brutal-offset">
             Knowledge Base (RAG Source)
           </div>
