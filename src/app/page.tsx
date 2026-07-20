@@ -15,9 +15,9 @@ export default function Home() {
 
       {/* Contact & Closing Section */}
       <section id="trajectory" className="w-full bg-white border-[3px] border-black shadow-brutal-offset p-8 sm:p-12 mb-16 text-center max-w-4xl mx-auto">
-        <h2 className="font-headings text-3xl font-black uppercase mb-6">Institutional Contact</h2>
+        <h2 className="font-headings text-3xl font-black uppercase mb-6">Get In Touch</h2>
         <p className="text-gray-800 text-lg leading-relaxed mb-8 font-medium">
-          For academic institutions or government entities interested in learning more details about the implemented methodologies, the technical feasibility of these solutions, or potential collaborations for education and cultural bilingualism, I invite you to contact me directly through my institutional networks and professional profiles.
+          Whether you are a recruiter, a company looking for technical solutions, or a peer interested in discussing methodologies and potential collaborations, I invite you to contact me directly through my professional networks.
         </p>
 
         <div className="flex flex-wrap justify-center gap-6">
