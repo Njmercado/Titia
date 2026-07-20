@@ -15,9 +15,11 @@ export const PROJECTS = [
     ),
     techs: [
       <FontAwesomeIcon icon={faReact} size="4x" key={1} />,
-      <FontAwesomeIcon icon={faAws} size="4x" key={2} />,
-      <FontAwesomeIcon icon={faGithub} size="4x" key={3} />,
-      <FontAwesomeIcon icon={faEnvira} size="4x" key={4} />,
+      <FontAwesomeIcon icon={faPython} size="4x" key={3} />,
+      <FontAwesomeIcon icon={faGithub} size="4x" key={6} />,
+      <span key={2} className="text-4xl font-black">MUI</span>,
+      <span key={4} className="text-4xl font-black">Supabase</span>,
+      <span key={5} className="text-4xl font-black">Firebase</span>,
     ],
     images: [
       {
@@ -43,146 +45,45 @@ export const PROJECTS = [
       description: 'Dictionary of Colombian Palenque indigenous language',
       techs: [
         <em key={1}><strong>React</strong></em>,
-        <em key={2}><strong>NextJs</strong></em>,
-        <em key={3}><strong>AWS</strong></em>,
-        <em key={4}><strong>Lambdas</strong></em>,
-        <em key={5}><strong>Github</strong></em>,
-        <em key={6}><strong>MongoDB</strong></em>,
+        <em key={2}><strong>MUI</strong></em>,
+        <em key={3}><strong>Supabase</strong></em>,
+        <em key={4}><strong>Python</strong></em>,
+        <em key={5}><strong>Firebase</strong></em>,
+        <em key={6}><strong>Github Actions</strong></em>,
       ],
     },
     history: [
       <article key={1}>
         <section>
-          <p>
-            This project was developed first with <strong>VueJS</strong> and <strong>Vuetify</strong> as Frontend Framework and CSS library.
+          <p className="mb-4">
+            This project was initially developed with <strong>VueJS</strong> and <strong>Vuetify</strong> as the Frontend Framework and CSS library, along with <strong>Express</strong> and <strong>MongoDB</strong> for the Backend, deployed on <strong>Digital Ocean</strong>.
+          </p>
+          <p className="mb-4">
+            It has since undergone a complete architectural overhaul. It is currently developed using <strong>React</strong> for modularizing components, with <strong>MUI</strong> as the primary component library.
+          </p>
+          <p className="mb-4">
+            On the backend and infrastructure side, <strong>Supabase</strong> was integrated for robust authentication and as the primary database engine. The core backend services are now developed in <strong>Python</strong>.
+          </p>
+          <p className="mb-4">
+            To streamline operations, the platform utilizes <strong>Firebase</strong> for rapid deployments, alongside <strong>Github</strong> and <strong>Github Actions</strong> for strict version control and automated CI/CD pipelines.
           </p>
           <p>
-            The Backend was developed with <strong>Express</strong> and <strong>MongoDB</strong> to handle the business logic.
-          </p>
-          <p>
-            The project was deployed in <strong>Digital Ocean</strong> and <strong>Docker</strong> was used to manage the project and its dependencies.
+            Additionally, a comprehensive <strong>Administrator System</strong> was built to handle all internal modifications. This includes full CRUD capabilities for articles (creation, edition, deletion, fetching), as well as words, users, news, and any other data entities within the Kribí ecosystem.
           </p>
         </section>
       </article>,
     ],
     technicalDescription: () => (
       <span>
-        This project was developed in <strong>ReactJs</strong> as Frontend Framework with the help of <strong>NextJS</strong>
-        for structure and pre configuration.
-        <br />
-        For the Backend was used <strong>AWS</strong> services like <strong>Lambda</strong> and <strong>Api Gateway</strong> to handle the business logic.
-        <br />
-        And for the constant development was used <strong>Github Actions</strong> and <strong>Netlify</strong>
-        to serve, manage the projects and dependencies, and version the changes.
+        The current architecture of Kribí relies on <strong>React</strong> for dynamic component rendering and <strong>MUI</strong> for consistent, accessible UI design.
+        <br /><br />
+        The data layer is powered by <strong>Supabase</strong>, which seamlessly handles authentication and complex database queries. Business logic and backend processes are driven by <strong>Python</strong>.
+        <br /><br />
+        The development lifecycle is fully automated. Code is versioned on <strong>Github</strong>, tested and built via <strong>Github Actions (CI/CD)</strong>, and finally deployed securely through <strong>Firebase</strong>.
+        A custom-built administrator dashboard also allows full CRUD operations on all content entities, ensuring easy maintenance without developer intervention.
       </span>
     ),
   } as IProjectTemplate,
-  {
-    title: 'Nuvu',
-    description: () => (
-      <span>Enterprise who design and distribute products developed with AI as their base. This enterrpise works along with a bunch of large companies developing fast and efficient solutions.</span>
-    ),
-    techs: [
-      <FontAwesomeIcon icon={faReact} size="4x" key={1}/>,
-      <FontAwesomeIcon icon={faDocker} size="4x" key={3}/>,
-      <FontAwesomeIcon icon={faAws} size="4x" key={4}/>,
-      <FontAwesomeIcon icon={faPython} size="4x" key={4}/>,
-      <FontAwesomeIcon icon={faRobot} size="4x" key={4}/>,
-    ],
-    images: [
-      {
-        src: '',
-        alt: ''
-      },
-    ],
-    link: 'https://nuvu.cc/',
-    short: {
-      title: 'Nuvu - Corporate project',
-      description: 'Enterprise focused in AI and Machine Learning',
-      techs: [
-        <em key={1}><strong>React</strong></em>,
-        <em key={3}><strong>Docker</strong></em>,
-        <em key={4}><strong>AWS</strong></em>,
-        <em key={5}><strong>Python</strong></em>,
-      ],
-    },
-    technicalDescription: () => (
-      <span>
-        Worked as a Senior FullStack Developer fixing and implementing new projects and features in <strong>React</strong>. Helped a lot developing new projects from scratch till production environment, catching user requests and convert client ideas into code.
-        As this is a Company project I can not say too much about it, but for sure this was a so challenging project where a ton of knowledge was gotten.
-      </span>
-    )
-  },
-  {
-    title: 'Drata',
-    description: () => (
-      <span>Enterprise focused in creation of automated tools to handle audit based on some specific frameworks like <strong>SOC 2</strong> and <strong>ISO 27001</strong>.</span>
-    ),
-    techs: [
-      <FontAwesomeIcon icon={faReact} size="4x" key={1}/>,
-      <FontAwesomeIcon icon={faNodeJs} size="4x" key={2}/>,
-      <FontAwesomeIcon icon={faDocker} size="4x" key={3}/>,
-      <FontAwesomeIcon icon={faGithub} size="4x" key={4}/>,
-    ],
-    images: [{
-      src: '/static/drata/1.png',
-      alt: ''
-    }],
-    link: 'https://drata.com/',
-    short: {
-      title: 'Drata - Corporate project',
-      description: 'Environment developed to build automated complicance processes',
-      techs: [
-        <em key={1}><strong>React</strong></em>,
-        <em key={2}><strong>Nest Js</strong></em>,
-        <em key={3}><strong>Docker</strong></em>,
-      ],
-    },
-    technicalDescription: () => (
-      <span>
-        Worked as a FullStack developer fixing and implementing new features in <strong>React</strong> and <strong>NestJs</strong>. Helped a lot developing new data transmition design patters to improve performance and organization.
-        As this is a Company project I can not say too much about it, but for sure this was a so challenging project where a ton of knowledge is gotten.
-      </span>
-    ),
-  } as IProjectTemplate,
-  {
-    title: 'Neumomed',
-    description: () => (
-      <span>
-        This is a administrative project to handle pattients and respiratory/sleeping especialists. 
-        This project look for to make easier traitments toward patients handling appointments, payments and communication.
-      </span>
-    ),
-    techs: [
-      <FontAwesomeIcon icon={faVuejs} size="4x" key={1}/>,
-      <FontAwesomeIcon icon={faNodeJs} size="4x" key={2}/>,
-      <FontAwesomeIcon icon={faDocker} size="4x" key={3}/>,
-      <FontAwesomeIcon icon={faGoogle} size="4x" key={4}/>,
-      <FontAwesomeIcon icon={faGitlab} size="4x" key={5}/>,
-    ],
-    images: [{
-      src: '/static/neumomed/1.png',
-      alt: ''
-    }],
-    link: 'https://neumomed.com/',
-    short: {
-      title: 'Neumomed - Corporate project',
-      description: 'Especialized medical center to trait sleeping and respiratory disorders',
-      techs: [
-        <em key={1}><strong>Vue</strong></em>,
-        <em key={2}><strong>Nest Js</strong></em>,
-        <em key={3}><strong>Docker</strong></em>,
-        <em key={4}><strong>GCP</strong></em>,
-        <em key={5}><strong>Gitlab</strong></em>,
-      ],
-    },
-    technicalDescription: () => (
-      <span>
-        Worked mostly as a <strong>Backend Dev</strong> developed and fixed a ton of services and microservices which were created in <strong>NestJs</strong>.
-        As This is a company project I can not talk about it, but with 2+ years of experience with <strong>Vue</strong> I gain a lot of experience and went deeper into my career path.
-      </span>
-    ),
-  } as IProjectTemplate
 ]
 
 export const EMPTY_PROJECT_TEMPLATE = {

@@ -1,0 +1,31 @@
+{
+  "title": "Engineering & Impact Pillars",
+  "pillars": [
+    {
+      "id": "kribi",
+      "icon": "Code2",
+      "color": "amber",
+      "title": "Kribí Platform",
+      "description": "As technical director and lead developer of the educational platform Kribí, I have taken leadership of its entire institutional and digital lifecycle. In this project, primarily focused on preserving the San Basilio de Palenque language, I designed both the system architecture and the digital interfaces that allow users worldwide to interact with this legacy. My work integrates modern AI-assisted design methodologies to ensure the educational system is not only accessible on a global scale but also intuitive and respectful of the cultural identity it represents.",
+      "tags": ["Next.js", "NLP", "AI DLC"],
+      "link": "/projects/Kribi",
+      "linkText": "Read Case Study"
+    },
+    {
+      "id": "edtech",
+      "icon": "Globe",
+      "color": "sage",
+      "title": "Global EdTech Scalability",
+      "description": "In addition to my management of independent projects with high social impact, I have solid experience in the international corporate sector. I currently work as a software engineer within one of the largest and most influential educational technology organizations worldwide. In this role, I am responsible for optimizing large-scale systems, ensuring the stability of platforms used massively by millions of students and teachers, and implementing new intelligent tools applied to digital learning.",
+      "tags": ["Multi-Tenant", "CI/CD", "Microservices"]
+    },
+    {
+      "id": "architecture",
+      "icon": "Server",
+      "color": "terra",
+      "title": "Architecture & Processing",
+      "description": "My previous experience encompasses solving complex problems in database structure and organization, optimizing computing processes, and delicately migrating records in demanding corporate environments. Furthermore, I have a strong focus on the orchestration of autonomous systems and natural language processing. My main short- and medium-term goal is to consolidate the development of a digital translator for native languages, allowing historical communities to have advanced technological tools for teaching, maintaining, and spreading their own cultural heritage.",
+      "tags": ["PostgreSQL", "Strands Orchestration", "ETL"]
+    }
+  ]
+}

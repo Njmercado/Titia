@@ -1,29 +1,10 @@
-import Footer from "./Footer/Footer";
-import Header from "./Header/Header";
-import Button from './Button/Button';
-import CvButton from './CvButton/CvButton';
-import Body from './Body/Body';
-import Title, { TitleSize } from './Title/Title';
-import ProjectView from "./ProjectView/ProjectView";
-import ProjectProvider from "./ProjectProvider/ProjectProvider";
-import ContactForm from "./ContactForm";
-import Input from "./Input";
-
-/* Components */
-export {
-  Footer,
-  Header,
-  Button,
-  CvButton,
-  Body,
-  Title,
-  ProjectView,
-  ProjectProvider,
-  ContactForm,
-  Input
-}
-
-/* Interfaces */
-export {
-  TitleSize,
-}
+export { default as Hero } from './Hero';
+export { default as Navbar } from './Navbar';
+export { default as PillarsGrid } from './PillarsGrid';
+export { default as ProjectProvider } from './ProjectProvider/ProjectProvider';
+export { default as ProjectView } from './ProjectView/ProjectView';
+export { default as ChatSection } from './ChatSection';
+export { default as KnowledgeBaseCard } from './KnowledgeBaseCard';
+export { type KnowledgeBaseCardProps } from './KnowledgeBaseCard';
+export { default as Chat } from './Chat';
+export { default as MessageBody, UserMessageBody, BotMessageBody } from './MessageBody'
