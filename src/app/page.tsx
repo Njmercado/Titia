@@ -1,49 +1,38 @@
-'use client'
-
-import { useAppDispatch } from '@/lib/store/hooks';
-import { URL } from '../constants/urls.constant';
-import Button, {Action} from '@/components/Button/Button';
-import { useEffect } from 'react';
-import { setComponent } from '@/lib/store/features/footer/footerSlice';
-import './page.css'
+import Hero from '@/components/Hero';
+import ChatSection from '@/components/ChatSection';
+import PillarsGrid from '@/components/PillarsGrid';
+import { Mail } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHandPointDown } from '@fortawesome/free-solid-svg-icons';
-import { ContactForm } from '@/components';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { CV_LINKS } from '@/constants/general.constant';
 
 export default function Home() {
-
-  const dispatch = useAppDispatch()
-  useEffect(() => { dispatch(setComponent('cv_button')) }, [])
-
   return (
-    <article>
-      <section>
-        <p>
-          Hi, Nino here. I am <strong>Computer Engineer</strong>, <strong>Frontend</strong> and <strong>Backend Dev</strong>.
-          In simple words: Artist by hobbie, Designer by heart and a Developer by passion.
-          I like simple and functional things without the necessity of weird solutions.
-          <br />
-          My sign is <q><em>perfection do not exists but there is always a better solution</em></q>.
-          <Button className="ml-2" type={Action.LINK} url={URL.ABOUT.MAIN} value="Lets go and know more about me :)"/>
+    <article className="w-full flex flex-col items-center">
+      <Hero />
+      <ChatSection />
+      <PillarsGrid />
+
+      {/* Contact & Closing Section */}
+      <section id="trajectory" className="w-full bg-white border-[3px] border-black shadow-brutal-offset p-8 sm:p-12 mb-16 text-center max-w-4xl mx-auto">
+        <h2 className="font-headings text-3xl font-black uppercase mb-6">Institutional Contact</h2>
+        <p className="text-gray-800 text-lg leading-relaxed mb-8 font-medium">
+          For academic institutions or government entities interested in learning more details about the implemented methodologies, the technical feasibility of these solutions, or potential collaborations for education and cultural bilingualism, I invite you to contact me directly through my institutional networks and professional profiles.
         </p>
-      </section>
-      <hr className="border-solid border-t-2 border-t-black my-8" />
-      <section>
-        <h2 className='text-2xl font-bold'>Projects</h2>
-        <p className="mt-5">
-          3+ years of experience developing multiple solutions with different techs and architectures, that is a great ice breaker, right?
-          <Button className="ml-2" type={Action.LINK} url={URL.PROJECTS.MAIN} value="Come and see some of my projects :)"/>
-        </p>
-      </section>
-      <hr className="boder-solid border-t-2 border-t-black my-8" />
-      <section>
-        <h2 className="text-2xl font-bold">Contact</h2>
-        <p className="mt-5">
-          I know you want more information and I would glad to help you, just fill this tiny tiny form here 
-          <FontAwesomeIcon className='ml-2' icon={faHandPointDown} shake={true}/>
-        </p>
-        <div className='mt-5'>
-          <ContactForm/>
+
+        <div className="flex flex-wrap justify-center gap-6">
+          <a href={CV_LINKS.LINKEDIN} target="_blank" rel="noreferrer" className="flex items-center gap-3 bg-brutal-cream border-[3px] border-black px-6 py-3 font-bold shadow-brutal-offset hover:translate-y-1 hover:translate-x-1 hover:shadow-none transition-all">
+            <FontAwesomeIcon icon={faLinkedin} className="text-xl" />
+            <span>LinkedIn</span>
+          </a>
+          <a href={CV_LINKS.GITHUB} target="_blank" rel="noreferrer" className="flex items-center gap-3 bg-brutal-cream border-[3px] border-black px-6 py-3 font-bold shadow-brutal-offset hover:translate-y-1 hover:translate-x-1 hover:shadow-none transition-all">
+            <FontAwesomeIcon icon={faGithub} className="text-xl" />
+            <span>GitHub</span>
+          </a>
+          <a href="mailto:njesusmercado@gmail.com" className="flex items-center gap-3 bg-brutal-cream border-[3px] border-black px-6 py-3 font-bold shadow-brutal-offset hover:translate-y-1 hover:translate-x-1 hover:shadow-none transition-all">
+            <Mail size={20} />
+            <span>Email</span>
+          </a>
         </div>
       </section>
     </article>

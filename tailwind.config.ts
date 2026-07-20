@@ -9,6 +9,22 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'brutal-cream': '#fdfbf7',
+        'brutal-amber': '#f5a623',
+        'brutal-terra': '#e27d60',
+        'brutal-sage': '#85a286',
+      },
+      boxShadow: {
+        'brutal-offset': '4px 4px 0px #000000',
+        'brutal': '4px 4px 0px 0px rgba(0,0,0,1)',
+        'brutal-sm': '2px 2px 0px 0px rgba(0,0,0,1)',
+        'brutal-lg': '8px 8px 0px 0px rgba(0,0,0,1)',
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        headings: ['"Space Grotesk"', 'sans-serif'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

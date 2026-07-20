@@ -1,11 +1,9 @@
 'use client'
 
-import { Title, TitleSize } from "@/components";
-import React, { useState } from "react";
-import Button, { Action } from "@/components/Button/Button";
+import React from "react";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faSortDown } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
+import { ArrowLeft, ExternalLink, Code, Lightbulb, Clock } from "lucide-react";
 import { IProjectTemplateWithLink } from "../Project/interface/ProjectTemplate.interface";
 
 export default function ProjectView({
@@ -18,102 +16,135 @@ export default function ProjectView({
   history
 }: IProjectTemplateWithLink) {
 
-  const [showHistory, setShowHistory] = useState(false)
-
   return (
-    <article>
-      <section className="-ml-2">
-        <Button
-          url={'/projects'}
-          type={Action.LINK}
-          value={
-            <article className="flex gap-2 items-center px-1">
-              <FontAwesomeIcon icon={faArrowLeft} />
-              <span>Projects</span>
-            </article>
-          }
-        />
-      </section>
-      <section className="mt-20">
-        <Title size={TitleSize.EXTRA_LARGE} value={title.toUpperCase()}></Title>
-        <p className="mt-10">
-          {
-            description() ?? "Description"
-          }
-        </p>
-      </section>
-      <section className="mt-10">
-        <Title size={TitleSize.BIG} value="Views"></Title>
-        <div className="flex flex-wrap gap-4 justify-center mt-10">
-          {images.map(({ src, alt }, index: number) =>
-            <Image
-              className="shadow-md shadow-slate-400 rounded-md"
-              src={src}
-              alt={alt}
-              width={400}
-              height={400}
-              key={index}
-            />
+    <article className="w-full max-w-5xl mx-auto py-12 px-4 sm:px-6">
+      
+      {/* Navigation */}
+      <Link 
+        href="/" 
+        className="inline-flex items-center gap-2 mb-10 font-bold hover:underline underline-offset-4 decoration-2"
+      >
+        <ArrowLeft size={20} />
+        <span>Back to Portfolio</span>
+      </Link>
+
+      {/* Hero / Title Section */}
+      <header className="mb-16">
+        <h1 className="font-headings text-5xl sm:text-6xl font-black uppercase mb-8 border-b-8 border-black pb-4">
+          {title}
+        </h1>
+        
+        {/* Purpose / Description (Lead Paragraph) */}
+        <div className="bg-brutal-cream border-[3px] border-black shadow-brutal-offset p-6 sm:p-8 text-xl sm:text-2xl leading-relaxed font-medium">
+          {description()}
+        </div>
+      </header>
+
+      {/* Main Content Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start mb-16">
+        
+        {/* Left Column: Tech & Architecture */}
+        <div className="lg:col-span-2 space-y-12">
+          
+          {/* Architecture & Technical Details */}
+          {technicalDescription && (
+            <section>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 bg-brutal-amber border-2 border-black flex items-center justify-center">
+                  <Code size={20} />
+                </div>
+                <h2 className="font-headings text-3xl font-bold">Architecture & Development</h2>
+              </div>
+              <div className="bg-white border-[3px] border-black shadow-brutal-offset p-6 sm:p-8 text-lg leading-relaxed text-gray-800">
+                {technicalDescription()}
+              </div>
+            </section>
+          )}
+
+          {/* Development History */}
+          {history && history.length > 0 && (
+            <section>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 bg-brutal-sage border-2 border-black flex items-center justify-center">
+                  <Clock size={20} />
+                </div>
+                <h2 className="font-headings text-3xl font-bold">Project History</h2>
+              </div>
+              <div className="bg-white border-[3px] border-black shadow-brutal-offset p-6 sm:p-8">
+                <ul className="space-y-4 text-lg text-gray-800 list-disc pl-6">
+                  {history.map((item: React.JSX.Element, index: number) => (
+                    <li key={index} className="pl-2">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+          )}
+
+        </div>
+
+        {/* Right Column: Tech Stack Sidebar */}
+        <div className="space-y-8">
+          <section>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 bg-brutal-terra border-2 border-black flex items-center justify-center text-white">
+                <Lightbulb size={20} />
+              </div>
+              <h2 className="font-headings text-3xl font-bold">Tech Stack</h2>
+            </div>
+            
+            {techs && techs.length > 0 ? (
+              <div className="flex flex-wrap gap-4">
+                {techs.map((tech: React.JSX.Element, index: any) => (
+                  <div 
+                    key={index} 
+                    className="bg-white border-2 border-black p-4 shadow-brutal-sm flex items-center justify-center"
+                  >
+                    {tech}
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="bg-gray-100 border-2 border-black p-4 font-medium italic">
+                Stack information not available.
+              </div>
+            )}
+          </section>
+
+          {/* Action Button */}
+          {link && (
+            <a 
+              href={link} 
+              target="_blank" 
+              rel="noreferrer"
+              className="w-full flex items-center justify-center gap-3 bg-brutal-amber px-6 py-4 border-[3px] border-black shadow-brutal-offset hover:translate-y-1 hover:translate-x-1 hover:shadow-none transition-all font-bold text-xl uppercase tracking-wide"
+            >
+              <span>Visit Project</span>
+              <ExternalLink size={24} />
+            </a>
           )}
         </div>
-      </section>
-      <section className="mt-10">
-        <Title size={TitleSize.BIG} value="Used techs"></Title>
-        {
-          techs.length > 0 ?
-            <p className="flex flex-wrap gap-10 justify-around mt-10">
-              {
-                techs.map(
-                  (tech: React.JSX.Element, index: any) =>
-                    <span key={index}>{tech}</span>
-                )
-              }
-            </p> :
-            "No techs were used here :("
-        }
-      </section>
-      {
-        technicalDescription?.() &&
-        <section className="mt-10">
-          <Title size={TitleSize.BIG} value="Technical explanation"></Title>
-          <p className="mt-10">
-            {
-              technicalDescription?.() ?? "There is no technical description available :("
-            }
-          </p>
-        </section>
-      }
-      {
-        history && history.length > 0 &&
-        <section className="mt-10 rounded-md bg-gray-200">
-          <div className="flex flex-row justify-between rounded-md bg-gray-300 p-2">
-            <Title size={TitleSize.BIG} value="History" />
-            <div
-              className="cursor-pointer transition-all hover:bg-gray-600 rounded-full pb-2 px-3"
-              onClick={() => setShowHistory(!showHistory)}
-            >
-              <FontAwesomeIcon
-                icon={faSortDown}
-                fontSize={32}
-              />
-            </div>
+      </div>
+
+      {/* Images Gallery */}
+      {images && images.length > 0 && images[0].src !== '' && (
+        <section className="mb-16 border-t-4 border-black pt-16">
+          <h2 className="font-headings text-3xl font-black uppercase mb-8 text-center">Gallery</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {images.map(({ src, alt }, index: number) => (
+              <div key={index} className="border-[3px] border-black shadow-brutal-offset bg-white overflow-hidden group">
+                <Image
+                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                  src={src}
+                  alt={alt || `Project image ${index + 1}`}
+                  width={800}
+                  height={600}
+                />
+              </div>
+            ))}
           </div>
-          <ul className={`text-sm px-6 py-2 transition-all ${showHistory? '': 'hidden'}`}>
-            {
-              history.map((history: React.JSX.Element, index: number) =>
-                <li className="list-disc" key={index}>{history}</li>
-              )
-            }
-          </ul>
         </section>
-      }
-      <section className="mt-10 text-center">
-        <Button
-          onClick={() => window.open(link, '_blank')}
-          value="Visit"
-          className="w-9/12 h-20"
-        ></Button>
-      </section>
+      )}
+
     </article>
   )
 }

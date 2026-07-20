@@ -1,14 +1,10 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
-import StoreProvider from '@/lib/store/StoreProvider'
-import { Body } from '@/components'
-
-const inter = Inter({ subsets: ['latin'] })
+import Navbar from '@/components/Navbar'
 
 export const metadata: Metadata = {
   title: 'Nino Mercado',
-  description: 'Portfolio of projects of Nino Mercado',
+  description: 'Portfolio of Nino Mercado - Software & AI Engineer',
 }
 
 export default function RootLayout({
@@ -17,10 +13,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <StoreProvider>
-      <html lang="en">
-        <Body>{children}</Body>
-      </html>
-    </StoreProvider>
+    <html lang="en" className="scroll-smooth">
+      <body className="font-sans text-xl bg-brutal-cream text-black min-h-screen flex flex-col">
+        <Navbar />
+        <main className="w-full flex-grow flex flex-col justify-start items-center">
+          <div className="w-full max-w-7xl py-12 px-6 sm:px-10">
+            {children}
+          </div>
+        </main>
+      </body>
+    </html>
   )
 }
